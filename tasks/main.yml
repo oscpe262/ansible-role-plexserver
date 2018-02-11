@@ -16,4 +16,11 @@
     system: yes
   notify:
     - Plex Service
+
+- name: Allow Plex through firewall
+  firewalld:
+    port: 32400/tcp
+    state: enabled
+    permanent: true
+
 ...
