@@ -1,0 +1,19 @@
+## roles/ansible-role-plexserver/tasks/main.yml
+# vim:ft=ansible:
+---
+- name: Ensure Plex Media Server is installed
+  package:
+    name: '{{ plex_url }}'
+    state: present
+  notify:
+    - Plex Service
+
+- name: "Add user 'plex' to users-group"
+  user:
+    name: plex
+    groups: 'plex_group'
+    append: yes
+    system: yes
+  notify:
+    - Plex Service
+...

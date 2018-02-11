@@ -1,0 +1,9 @@
+## roles/ansible-role-plexserver/handlers/main.yml
+# vim:ft=ansible:
+---
+- name: Plex Service
+  service:
+    name: plexmediaserver.service
+    state: restarted
+    enabled: yes
+...
