@@ -4,6 +4,7 @@ An Ansible role for setting up a Plex Media Server.
 
 ## Requirements
 This role has been developed for Fedora 27. No guarantees provided for any other distro, but should be applicable to most of the common ones. The defaults are for Fedora, and it will modify the plex account to access all media available to users in the group "users". 
+The default url is for Plex Pass Users.
 
 ## Role Variables
 | Variable		| Default		| Comments (type) |
