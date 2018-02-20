@@ -11,7 +11,7 @@
 - name: "Add user 'plex' to users-group"
   user:
     name: plex
-    groups: 'plex_group'
+    groups: '{{ plex_group }}'
     append: yes
     system: yes
   notify:
