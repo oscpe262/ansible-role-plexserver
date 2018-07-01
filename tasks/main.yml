@@ -1,5 +1,5 @@
 ## roles/ansible-role-plexserver/tasks/main.yml
-# vim:ft=ansible:
+# vim:ft=yaml.ansible:
 ---
 - name: Ensure Plex Media Server is installed
   package:

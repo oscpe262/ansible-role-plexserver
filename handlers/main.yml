@@ -1,5 +1,5 @@
 ## roles/ansible-role-plexserver/handlers/main.yml
-# vim:ft=ansible:
+# vim:ft=yaml.ansible:
 ---
 - name: Plex Service
   service:
