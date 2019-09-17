@@ -1,26 +1,8 @@
 ## roles/ansible-role-plexserver/tasks/main.yml
 # vim:ft=yaml.ansible:
 ---
-- name: Ensure Plex Media Server is installed
-  package:
-    name: '{{ plex_url }}'
-    state: present
-  notify:
-    - Plex Service
-
-- name: "Add user 'plex' to users-group"
-  user:
-    name: plex
-    groups: '{{ plex_group }}'
-    append: yes
-    system: yes
-  notify:
-    - Plex Service
-
-- name: Allow Plex through firewall
-  firewalld:
-    port: 32400/tcp
-    state: enabled
-    permanent: true
-
+include_tasks: "{{ item }}.yml"
+with_first_found:
+  - "{{ ansible_distribution }}"
+  - "{{ ansible_os_family }}"
 ...
